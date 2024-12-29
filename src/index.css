@@ -1,13 +1,110 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+:root{
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: white;
+  background-color: #030615;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root{
+  min-height: 100vh;
+  display: flex;
+  display: relative;
+}
+
+.imgContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.bgImage{
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  object-fit: cover;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bgGradient{
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, #030615 , rgba(255,255,255,0));
+
+}
+
+.sidebar{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.bgOverlay{
+  position: absolute;
+  inset: 0;
+  background: #030615;
+  opacity: 0.6;
+}
+
+.sidebarContents{
+  z-index: 15;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: scroll;
+  height: 100%;
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  background: #030615;
+}
+
+.sidebarContents div{
+  flex: 1;
+}
+
+.sidebarContents button{
+  background: transparent;
+  color: white;
+  border: none;
+  outline:none;
+  margin-right: auto;
+}
+
+@media(min-width:640px){
+  .sidebar{
+    position: relative;
+    inset: unset;
+    min-width: 30%;
+    box-shadow: 0 0 40px 1px #030615;
+  }
+
+  .sidebarContents{
+    margin: unset;
+  }
 }
